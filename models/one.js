@@ -7,6 +7,10 @@ const OneSchema = new mongoose.Schema({
   age: {
     type: Number,
     required: true
+  },
+  age2: {
+    type: Number,
+    required: true
   }
 })
 

@@ -15,11 +15,11 @@ const { name } = require("ejs");
 
 
 //mongoose
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
+// mongoose.connect( "mongodb+srv://hishan:1234@cluster0.sksy2nt.mongodb.net/?retryWrites=true&w=majority",{ useNewUrlParser: true })
+ mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
 const db = mongoose.connection
-db.on('error', error => console.error(error))
 db.once('open', () => console.log('Connected to Mongoose'))
-// mongoose.connect( "mongodb+srv://hishan:1234@cluster0.sksy2nt.mongodb.net/?retryWrites=true&w=majority");
+db.on('error', error => console.error(error))
 
 //midddleware
 app.use(express.static(path.join(__dirname, "views")));
@@ -31,6 +31,7 @@ app.get("/", (req, res) =>
    {
   res.render("login");
   });
+
 
 // post request for /
 app.post("/", (req, res) => {
@@ -56,11 +57,25 @@ app.post("/register", (req, res) => {
     const first = new one
     ({
     name: req.body.name,
-    age: req.body.age
-    });
+    age: req.body.age,
+    age2:req.body.age2
+  });
+  let age= req.body.age;
+  let age2 =req.body.age2;
+
+  let agw
+  if(age==age2)
+  {
     first.save();
     res.redirect("/");
+
+  }
+  else{
+        res.send('wrong password')
+
+  }
+  
     });
 
 //listen
-app.listen(process.env.PORT)
+app.listen(process.env.PORT || port)
