@@ -1,23 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>register</h1>
-    <form method="post" >
-  <input type="text" placeholder="name" name="name">
-  <div>
-    <input type="text" placeholder="password" name="age">
-    <input type="text" placeholder="confirm password" name="age2">
-    <div id="cpass"></div>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body>
 
- </div>
-    <button type="submit">submit</button>
-    </form>
-    <a href="/">login</a>
-</body>
+<div class="container mt-5">
+  <h1>register</h1>
+<form method="post">
+    <div class="form-floating mb-3">
+  <input type="email" class="form-control" id="floatingInput " name="name" placeholder="name@example.com">
+  <label for="floatingInput">Email address</label>
+</div>
+<div class="form-floating">
+  <input type="password" class="form-control" id="floatingPassword"  name="age" placeholder="Password">
+  <label for="floatingPassword">Password</label>
+</div>
+<div class="form-floating mt-3">
+  <input type="password" class="form-control" id="floatingPassword"  name="age2" placeholder="Password">
+  <label for="floatingPassword"> confirm Password</label>
+</div>
+<button type="submit" class="btn btn-outline-danger mt-3">register</button>
+<a href="/" id="ml-2">login</a>
+   </form> 
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
 </html>

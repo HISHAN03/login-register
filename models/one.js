@@ -1,17 +1,20 @@
 const mongoose = require('mongoose')
 const OneSchema = new mongoose.Schema({
-  name: {
+  name:
+   {
     type: String,
     required: true
-  },
-  age: {
+   },
+  age:
+   {
     type: Number,
     required: true
-  },
-  age2: {
+   },
+  age2:
+   {
     type: Number,
     required: true
-  }
-})
+   }
+   }) 
 
 module.exports = mongoose.model('One', OneSchema)
