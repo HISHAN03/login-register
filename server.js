@@ -3,7 +3,6 @@ if (process.env.NODE_ENV !== 'production')
 
 //const declaration
 const express = require("express");
-const one = require("./models/one");
 const path = require("path");
 const app = express();
 const mongoose=require('mongoose')
@@ -12,6 +11,7 @@ const bodyParser = require("body-parser");
 const { name } = require("ejs");
 const loginRouter=require("./routes/login")
 const registerRouter=require("./routes/register")
+const authorRouter=require("./routes/authors")
 
 //mongoose
  mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
@@ -27,6 +27,7 @@ app.set("view engine", "hbs");
 //routes
 app.use('/', loginRouter)
 app.use('/register', registerRouter)
+app.use('/authors', authorRouter)
 
 //listen
 app.listen(process.env.PORT || port)
